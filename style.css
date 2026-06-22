@@ -467,7 +467,7 @@ h1, h2, h3 {
 /* kafelki kolekcji — wersja kompaktowa pozioma scroll na mobile */
 .collection-strip { display: grid; gap: var(--gap); grid-template-columns: repeat(2,1fr); }
 @media (min-width: 760px) { .collection-strip { grid-template-columns: repeat(5,1fr); } }
-.col-tile { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; display:flex; align-items:flex-end; padding: 1rem; color: var(--oak); box-shadow: var(--shadow); transition: transform .25s ease; }
+.col-tile { position: relative; isolation: isolate; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; display:flex; align-items:flex-end; padding: 1rem; color: var(--oak); box-shadow: var(--shadow); transition: transform .25s ease; }
 .col-tile:hover { transform: translateY(-4px); }
 .col-tile .ct-media { position:absolute; inset:0; z-index:-1; }
 .col-tile .ct-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.05),rgba(20,12,8,.8)); }
