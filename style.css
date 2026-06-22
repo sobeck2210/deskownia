@@ -442,7 +442,7 @@ h1, h2, h3 {
     linear-gradient(160deg,#1d120c,#3a2418 70%,#4d3424);
 }
 .shop-hero .media::after { content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(20,12,8,.72) 0%, rgba(20,12,8,.35) 48%, rgba(20,12,8,.1) 100%); }
-.shop-hero .wrap { position: relative; z-index: 2; width: 100%; }
+.shop-hero .wrap { position: relative; z-index: 2; }
 .shop-hero .inner { max-width: 40ch; margin-inline: 0; padding: clamp(2.4rem,7vw,4.5rem) 0; text-align: left; }
 .shop-hero .eyebrow { justify-content: flex-start; }
 .shop-hero h1 { font-size: clamp(2.4rem,6.5vw,4.6rem); margin-bottom: 1.1rem; }
