@@ -255,14 +255,9 @@ h1, h2, h3 {
 .cat-card .cc-media { position:absolute; inset:0; z-index:-2; }
 .cat-card .cc-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,12,8,.05), rgba(20,12,8,.82)); z-index:-1; }
 /* warianty słojów dla kafelków */
-.cc-buk   .cc-media { background: url('bukowe.webp') no-repeat center center; }
-.cc-dab   .cc-media { background: repeating-linear-gradient(95deg,#8a5c34 0 26px,#9a6b3e 26px 52px); }
-.cc-sztorc .cc-media{ background:
-  repeating-linear-gradient(0deg,#6b4426 0 22px,#7a4f2c 22px 44px),
-  repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 22px,transparent 22px 44px);
-  background-blend-mode: multiply; }
-.cc-serw  .cc-media { background: radial-gradient(120% 80% at 30% 20%, #8a5c34, #5a3e2a); }
-.cc-zestaw .cc-media{ background: linear-gradient(135deg,#9a6b3e,#c77d2e 90%); }
+.cc-buk   .cc-media { background: repeating-linear-gradient(100deg,#c9a878 0 30px,#d8b988 30px 60px); }
+.cc-sushi .cc-media { background: repeating-linear-gradient(100deg,#5a3e2a 0 28px,#6b4a30 28px 56px); }
+.cc-przy  .cc-media { background: linear-gradient(135deg,#b98a52,#d8b988 90%); }
 .cat-card .cc-no { font-family: var(--display); font-size: .8rem; opacity:.7; letter-spacing:.1em; }
 .cat-card h3 { font-size: 1.5rem; margin: .2rem 0 .4rem; }
 .cat-card p { font-size: .9rem; margin: 0 0 .9rem; color: rgba(244,236,221,.82); }
@@ -437,10 +432,9 @@ h1, h2, h3 {
 .shop-hero .media {
   position: absolute; inset: 0; z-index: 0;
   background:
-    /* radial-gradient(90% 80% at 15% 90%, rgba(199,125,46,.26), transparent 55%),
+    radial-gradient(90% 80% at 15% 90%, rgba(199,125,46,.26), transparent 55%),
     repeating-linear-gradient(98deg,#2c1c14 0 30px,#34211618 30px 60px),
-    linear-gradient(160deg,#1d120c,#3a2418 70%,#4d3424); */
-     url('hero-banner.webp') no-repeat center center
+    linear-gradient(160deg,#1d120c,#3a2418 70%,#4d3424);
 }
 .shop-hero .media::after { content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(20,12,8,.72) 0%, rgba(20,12,8,.35) 48%, rgba(20,12,8,.1) 100%); }
 .shop-hero .wrap { position: relative; z-index: 2; }
@@ -466,14 +460,14 @@ h1, h2, h3 {
 @media (min-width: 920px) { .hero-pin { display: block; } }
 
 /* kafelki kolekcji — wersja kompaktowa pozioma scroll na mobile */
-.collection-strip { display: grid; gap: var(--gap); grid-template-columns: repeat(2,1fr); }
-@media (min-width: 760px) { .collection-strip { grid-template-columns: repeat(5,1fr); } }
-.col-tile { position: relative; isolation: isolate; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; display:flex; align-items:flex-end; padding: 1rem; color: var(--oak); box-shadow: var(--shadow); transition: transform .25s ease; }
+.collection-strip { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+@media (min-width: 640px) { .collection-strip { grid-template-columns: repeat(3,1fr); } }
+.col-tile { position: relative; isolation: isolate; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; display:flex; align-items:flex-end; padding: 1.2rem; color: var(--oak); box-shadow: var(--shadow); transition: transform .25s ease; }
 .col-tile:hover { transform: translateY(-4px); }
-.col-tile .ct-media { position:absolute; inset:0; z-index:-1; }
+.col-tile .ct-media { position:absolute; inset:0; z-index:0; }
 .col-tile .ct-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.05),rgba(20,12,8,.8)); }
-.col-tile h3 { position: relative; font-size: 1.15rem; }
-.col-tile .ct-arrow { position:absolute; top:.8rem; right:.8rem; width:30px; height:30px; border-radius:50%; background:rgba(244,236,221,.18); display:grid; place-items:center; backdrop-filter: blur(4px); }
+.col-tile h3 { position: relative; z-index:2; font-size: 1.3rem; }
+.col-tile .ct-arrow { position:absolute; top:.9rem; right:.9rem; z-index:2; width:32px; height:32px; border-radius:50%; background:rgba(244,236,221,.2); display:grid; place-items:center; backdrop-filter: blur(4px); }
 
 /* „The Edit” — dwa duże editorialowe kafle */
 .edit-grid { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
