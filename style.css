@@ -411,3 +411,117 @@ h1, h2, h3 {
 /* reveal */
 [data-reveal] { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
 [data-reveal].in { opacity:1; transform:none; }
+
+/* =====================================================================
+   WEBSHOP / CONCEPT STORE — moduły strony głównej
+   ===================================================================== */
+
+/* pasek ogłoszeń */
+.announce {
+  background: var(--espresso); color: var(--oak);
+  font-size: .8rem; letter-spacing: .03em; text-align: center;
+  padding: .55rem 1rem;
+}
+.announce b { color: var(--oil-hot); font-weight: 600; }
+
+/* nagłówek wiersza z linkiem „zobacz wszystkie” */
+.row-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: clamp(1.4rem,4vw,2.2rem); }
+.row-head h2 { font-size: clamp(1.6rem,4.5vw,2.6rem); }
+.row-head .seeall { font-size: .9rem; font-weight: 600; color: var(--oil); white-space: nowrap; display: inline-flex; align-items: center; gap: .4rem; }
+.row-head .seeall:hover { color: var(--oil-hot); }
+.row-head .seeall .arrow { transition: transform .2s ease; }
+.row-head .seeall:hover .arrow { transform: translateX(3px); }
+
+/* hero sklepowy — editorial, krótki */
+.shop-hero { position: relative; background: var(--walnut); color: var(--oak); overflow: hidden; }
+.shop-hero .media {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(120% 90% at 75% 15%, rgba(199,125,46,.22), transparent 55%),
+    repeating-linear-gradient(98deg,#2c1c14 0 30px,#34211618 30px 60px),
+    linear-gradient(160deg,#1d120c,#3a2418 70%,#4d3424);
+}
+.shop-hero .media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,12,8,.1), rgba(20,12,8,.55)); }
+.shop-hero .inner { position: relative; z-index: 2; padding: clamp(3rem,9vw,6rem) 0; max-width: 30ch; }
+.shop-hero h1 { font-size: clamp(2.2rem,6.5vw,4.2rem); margin-bottom: 1rem; }
+.shop-hero h1 em { font-style: italic; color: var(--oil-hot); }
+.shop-hero p { color: rgba(244,236,221,.86); font-size: 1.1rem; margin: 0 0 1.8rem; }
+.shop-hero .h-cta { display: flex; flex-wrap: wrap; gap: .7rem; }
+/* przypięta karta produktu w hero */
+.hero-pin {
+  position: absolute; right: clamp(1rem,4vw,3rem); bottom: clamp(1rem,4vw,3rem); z-index: 3;
+  background: var(--paper); color: var(--ink); border-radius: var(--radius);
+  padding: .8rem; width: 200px; box-shadow: var(--shadow); display: none;
+}
+.hero-pin .hp-img { aspect-ratio: 1; border-radius: 3px; background: repeating-linear-gradient(0deg,#7a4f2c 0 14px,#6b4426 14px 28px),repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 14px,transparent 14px 28px); background-blend-mode:multiply; margin-bottom:.6rem; }
+.hero-pin small { color: var(--oil); font-weight: 600; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+.hero-pin b { display: block; font-family: var(--display); font-size: 1.05rem; margin: .1rem 0 .3rem; }
+.hero-pin .hp-foot { display:flex; align-items:center; justify-content:space-between; }
+.hero-pin .price { font-family: var(--display); }
+.hero-pin .add { background:var(--espresso); color:var(--oak); border:none; border-radius:3px; padding:.4rem .6rem; font-family:var(--body); font-weight:600; font-size:.78rem; cursor:pointer; }
+.hero-pin .add:hover { background: var(--oil); }
+@media (min-width: 920px) { .hero-pin { display: block; } }
+
+/* kafelki kolekcji — wersja kompaktowa pozioma scroll na mobile */
+.collection-strip { display: grid; gap: var(--gap); grid-template-columns: repeat(2,1fr); }
+@media (min-width: 760px) { .collection-strip { grid-template-columns: repeat(5,1fr); } }
+.col-tile { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; display:flex; align-items:flex-end; padding: 1rem; color: var(--oak); box-shadow: var(--shadow); transition: transform .25s ease; }
+.col-tile:hover { transform: translateY(-4px); }
+.col-tile .ct-media { position:absolute; inset:0; z-index:-1; }
+.col-tile .ct-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.05),rgba(20,12,8,.8)); }
+.col-tile h3 { position: relative; font-size: 1.15rem; }
+.col-tile .ct-arrow { position:absolute; top:.8rem; right:.8rem; width:30px; height:30px; border-radius:50%; background:rgba(244,236,221,.18); display:grid; place-items:center; backdrop-filter: blur(4px); }
+
+/* „The Edit” — dwa duże editorialowe kafle */
+.edit-grid { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+@media (min-width: 800px) { .edit-grid { grid-template-columns: 1fr 1fr; } }
+.edit-card { position: relative; min-height: 360px; border-radius: var(--radius); overflow: hidden; display:flex; flex-direction:column; justify-content:flex-end; padding: clamp(1.4rem,4vw,2.4rem); color: var(--oak); box-shadow: var(--shadow); }
+.edit-card .ec-media { position:absolute; inset:0; z-index:-1; }
+.edit-card .ec-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.08),rgba(20,12,8,.78)); }
+.edit-card.e1 .ec-media { background: linear-gradient(135deg,#9a6b3e,#c77d2e 90%); }
+.edit-card.e2 .ec-media { background: repeating-linear-gradient(0deg,#7a4f2c 0 20px,#6b4426 20px 40px),repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 20px,transparent 20px 40px); background-blend-mode:multiply; }
+.edit-card small { color: var(--oil-hot); font-weight: 700; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
+.edit-card h3 { font-size: clamp(1.5rem,3.5vw,2.2rem); margin: .4rem 0 .8rem; max-width: 18ch; }
+
+/* bundle / kupowane razem */
+.bundle { background: var(--oak); border-radius: var(--radius); padding: clamp(1.6rem,5vw,3rem); display: grid; gap: 2rem; align-items: center; }
+@media (min-width: 800px) { .bundle { grid-template-columns: 1.1fr 1fr; } }
+.bundle-visual { display: flex; gap: .8rem; align-items: center; justify-content: center; }
+.bundle-visual .bv { border-radius: var(--radius); box-shadow: var(--shadow); }
+.bundle-visual .bv1 { width: 46%; aspect-ratio: 1; background: repeating-linear-gradient(100deg,#c9a878 0 18px,#d8b988 18px 36px); }
+.bundle-visual .plus { font-family: var(--display); font-size: 2rem; color: var(--oil); }
+.bundle-visual .bv2 { width: 30%; aspect-ratio: 3/4; background: linear-gradient(160deg,#c77d2e,#9a6b3e); }
+.bundle-text h2 { font-size: clamp(1.6rem,4vw,2.4rem); margin-bottom: .8rem; }
+.bundle-text p { color: #4a392c; margin: 0 0 1.2rem; }
+.bundle-price { display: flex; align-items: baseline; gap: .8rem; margin-bottom: 1.2rem; }
+.bundle-price .now { font-family: var(--display); font-size: 2rem; }
+.bundle-price .was { color: var(--clay); text-decoration: line-through; }
+.bundle-price .save { background: var(--oil); color:#fff; font-size:.75rem; font-weight:700; padding:.25rem .55rem; border-radius:3px; }
+
+/* pasek opinii */
+.reviews { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+@media (min-width: 760px) { .reviews { grid-template-columns: repeat(3,1fr); } }
+.review { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.4rem; background: var(--paper); }
+.review .stars { color: var(--oil); letter-spacing: .1em; margin-bottom: .6rem; }
+.review p { margin: 0 0 1rem; font-size: .98rem; }
+.review .who { font-size: .85rem; color: var(--clay); font-weight: 600; }
+
+/* newsletter */
+.newsletter { background: var(--espresso); color: var(--oak); border-radius: var(--radius); padding: clamp(2rem,6vw,3.5rem); text-align: center; }
+.newsletter h2 { font-size: clamp(1.6rem,4vw,2.4rem); margin-bottom: .6rem; }
+.newsletter p { color: rgba(244,236,221,.78); margin: 0 auto 1.6rem; max-width: 46ch; }
+.nl-form { display: flex; gap: .6rem; max-width: 440px; margin: 0 auto; flex-wrap: wrap; }
+.nl-form input { flex: 1; min-width: 200px; padding: .9rem 1.1rem; border-radius: var(--radius); border: 1px solid var(--line-dk); background: rgba(244,236,221,.06); color: var(--oak); font-family: var(--body); font-size: .95rem; }
+.nl-form input::placeholder { color: rgba(244,236,221,.5); }
+
+/* search overlay */
+.search-overlay { position: fixed; inset: 0; z-index: 85; background: rgba(20,12,8,.5); opacity:0; visibility:hidden; transition: opacity .2s ease; }
+.search-overlay.open { opacity:1; visibility:visible; }
+.search-panel { background: var(--paper); padding: 1.2rem clamp(1rem,5vw,3rem); box-shadow: var(--shadow); transform: translateY(-100%); transition: transform .28s ease; }
+.search-overlay.open .search-panel { transform: translateY(0); }
+.search-panel .sp-row { display:flex; align-items:center; gap:.8rem; max-width: var(--max); margin-inline:auto; }
+.search-panel input { flex:1; border:none; border-bottom: 2px solid var(--line); background:none; font-family: var(--display); font-size: clamp(1.3rem,4vw,2rem); padding:.5rem 0; color: var(--ink); }
+.search-panel input:focus { outline:none; border-color: var(--oil); }
+.search-sug { max-width: var(--max); margin: 1rem auto 0; display:flex; gap:.6rem; flex-wrap:wrap; }
+.search-sug a { font-size:.85rem; border:1px solid var(--line); border-radius:20px; padding:.4rem .9rem; color: var(--clay); }
+.search-sug a:hover { border-color: var(--oil); color: var(--oil); }

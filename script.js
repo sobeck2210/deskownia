@@ -86,6 +86,14 @@
     });
   }
 
+  /* ---- Wyszukiwarka (overlay) ---- */
+  const searchOverlay = document.querySelector("[data-search-overlay]");
+  const openSearch = () => { searchOverlay && searchOverlay.classList.add("open"); const i = searchOverlay && searchOverlay.querySelector("input"); i && setTimeout(() => i.focus(), 120); };
+  const closeSearch = () => searchOverlay && searchOverlay.classList.remove("open");
+  document.querySelectorAll("[data-open-search]").forEach(b => b.addEventListener("click", openSearch));
+  searchOverlay && searchOverlay.addEventListener("click", e => { if (e.target === searchOverlay) closeSearch(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeSearch(); });
+
   /* ---- Reveal przy scrollu ---- */
   const items = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && items.length) {

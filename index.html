@@ -4,15 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- META: strona główna -->
-<title>Deski do krojenia z drewna — Manufaktura premium | Deskownia</title>
-<meta name="description" content="Ręcznie robione deski do krojenia z litego drewna premium. Niezależna manufaktura, kleje Titebond III, dożywotnia jakość. Darmowa wysyłka od 250 zł. Zamów ▸">
+<title>Deski do krojenia z drewna — sklep manufaktury premium | Deskownia</title>
+<meta name="description" content="Sklep z ręcznie robionymi deskami do krojenia z litego drewna premium. Bukowe, dębowe, sztorcowe, do serwowania. Darmowa wysyłka od 250 zł. Kupuj ▸">
 <link rel="canonical" href="https://www.deskownia.pl/">
-<meta property="og:title" content="Deski do krojenia z drewna — Manufaktura premium">
-<meta property="og:description" content="Ręcznie robione deski do krojenia z litego drewna premium. Niezależna manufaktura, kleje certyfikowane do żywności.">
-<meta property="og:site_name" content="Deskownia">
+<meta property="og:title" content="Deski do krojenia z drewna — sklep manufaktury premium">
+<meta property="og:description" content="Ręcznie robione deski do krojenia z litego drewna premium. Niezależna manufaktura.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Deskownia">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,6 +32,9 @@
 </head>
 <body>
 
+<!-- pasek ogłoszeń -->
+<div class="announce">Grawer <b>gratis</b> do każdej deski &nbsp;·&nbsp; Darmowa wysyłka od <b>250 zł</b> &nbsp;·&nbsp; Wysyłka w 24h</div>
+
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="wrap nav">
@@ -46,9 +48,14 @@
       <a href="kategoria-sztorcowe.html">Sztorcowe</a>
       <a href="kategoria-serwowanie.html">Do serwowania</a>
       <a href="kategoria-zestawy.html">Zestawy</a>
-      <a href="#historia">O nas</a>
     </nav>
     <div class="nav-actions">
+      <button class="icon-btn" data-open-search aria-label="Szukaj">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Konto">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+      </button>
       <button class="icon-btn cart-btn" data-open-cart aria-label="Koszyk">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H2"/></svg>
         <span class="cart-count" data-cart-count style="display:none">0</span>
@@ -74,154 +81,188 @@
     <a href="kategoria-sztorcowe.html">Deski sztorcowe</a>
     <a href="kategoria-serwowanie.html">Do serwowania</a>
     <a href="kategoria-zestawy.html">Zestawy prezentowe</a>
-    <a href="#historia">Nasza historia</a>
   </nav>
 </div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <!-- WIDEO W TLE: zastąp diva tagiem <video autoplay muted loop playsinline poster="...">
-       Materiał: zwolnione ujęcie olejowania świeżo oszlifowanej deski sztorcowej,
-       kropla oleju lnianego wsiąka w słoje, ciepłe światło warsztatu. -->
-  <div class="hero-media" aria-hidden="true"></div>
-  <div class="wrap hero-inner">
-    <p class="eyebrow" style="color:var(--oil-hot)">Manufaktura desek · pasja do drewna</p>
-    <h1>Deski do krojenia z&nbsp;litego drewna, robione <em>ręcznie</em></h1>
-    <p class="lead">Wybitna selekcja drewna, kleje Titebond III bezpieczne dla żywności i wzornictwo, które przetrwa pokolenia. Każdą deskę kuchenną premium robimy ręcznie, z pasji do drewna.</p>
-    <div class="hero-cta">
-      <a class="btn btn--primary" href="#kategorie">Wybierz swoją deskę <span class="arrow">→</span></a>
-      <a class="btn btn--ghost" href="#historia" style="color:var(--oak)">Poznaj warsztat</a>
+<!-- search overlay -->
+<div class="search-overlay" data-search-overlay>
+  <div class="search-panel">
+    <div class="sp-row">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--clay)" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+      <input type="search" placeholder="Czego szukasz? np. deska sztorcowa, prezent…" aria-label="Szukaj produktów">
     </div>
-    <div class="hero-trust">
-      <span><b>10k+</b> desek&nbsp;w&nbsp;kuchniach</span>
-      <span><b>4,9</b>★ ocena&nbsp;klientów</span>
-      <span><b>100%</b> lite&nbsp;drewno</span>
-      <span><b>∞</b> serwis&nbsp;na&nbsp;lata</span>
+    <div class="search-sug">
+      <a href="kategoria-sztorcowe.html">deska sztorcowa</a>
+      <a href="kategoria-debowe.html">deska dębowa</a>
+      <a href="kategoria-zestawy.html">prezent dla kucharza</a>
+      <a href="kategoria-serwowanie.html">deska na sery</a>
+      <a href="kategoria-zestawy.html">olej do drewna</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO (sklepowy, editorial) ============ -->
+<section class="shop-hero">
+  <div class="media" aria-hidden="true"></div>
+  <div class="wrap inner">
+    <p class="eyebrow" style="color:var(--oil-hot)">Nowa kolekcja · lite drewno</p>
+    <h1>Deski do krojenia, które <em>kochasz</em> używać</h1>
+    <p>Ręcznie robione w niezależnej manufakturze. Buk, dąb, sztorc i monolity do serwowania.</p>
+    <div class="h-cta">
+      <a class="btn btn--primary" href="#bestsellery">Kupuj deski <span class="arrow">→</span></a>
+      <a class="btn btn--light" href="#kolekcje">Przeglądaj kolekcje</a>
+    </div>
+  </div>
+  <!-- przypięty produkt (shoppable hero) -->
+  <div class="hero-pin">
+    <div class="hp-img"></div>
+    <small>Bestseller</small>
+    <b>Deska sztorcowa Szachownica</b>
+    <div class="hp-foot">
+      <span class="price">489 zł</span>
+      <button class="add" data-add data-name="Deska sztorcowa Szachownica 40×30" data-price="489">Dodaj</button>
     </div>
   </div>
 </section>
 
-<!-- pasek korzyści (USP) -->
+<!-- pasek korzyści -->
 <div class="usp-bar">
   <div class="wrap">
     <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 13h13l3-4h2v7H3z"/><circle cx="7" cy="18" r="1.5"/><circle cx="17" cy="18" r="1.5"/></svg><b>Darmowa wysyłka<span>od 250 zł</span></b></div>
     <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg><b>Kleje Titebond III<span>bezpieczne dla żywności</span></b></div>
-    <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg><b>Lite drewno<span>0% płyt i sklejek</span></b></div>
-    <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg><b>14 dni na zwrot<span>oraz grawer gratis</span></b></div>
+    <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg><b>100% lite drewno<span>0% płyt i sklejek</span></b></div>
+    <div class="usp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg><b>Grawer gratis<span>oraz 14 dni na zwrot</span></b></div>
   </div>
 </div>
 
-<!-- ============ E-E-A-T / HISTORIA ============ -->
-<section class="section section--paper" id="historia">
+<!-- ============ BESTSELLERY (shop-first) ============ -->
+<section class="section section--paper" id="bestsellery">
   <div class="wrap">
-    <div class="story" data-reveal>
-      <div class="story-visual">
-        <span class="story-badge"><b>100%</b><small>ręczna robota</small></span>
-        <span class="ph-tag">Foto/wideo: dłonie przy szlifowaniu deski, wióry, ciepłe światło manufaktury</span>
-      </div>
-      <div class="story-text">
-        <p class="eyebrow">Nasza pasja</p>
-        <h2>Robimy jedno. Deski do krojenia, których nie da się podrobić.</h2>
-        <p>Deskownia powstała z prostego przekonania: drewno zasługuje na szacunek, a dobra deska do krojenia to przedmiot na całe życie. Nie jesteśmy fabryką — jesteśmy niezależną manufakturą skupioną wyłącznie na deskach.</p>
-        <p>Każdą deskę projektujemy i wykonujemy ręcznie. Sami selekcjonujemy drewno, suszymy je do stabilnej wilgotności i szlifujemy do jedwabistej gładkości. Nic nie opuszcza manufaktury, zanim nie weźmiemy deski do ręki i nie powiemy: tak, to jest nasze.</p>
-        <p>To jest E-E-A-T zapisane w drewnie — doświadczenie, fachowość i odpowiedzialność, które czuć przy każdym cięciu.</p>
-        <div class="story-sign">
-          <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="var(--oil)" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
-          <span class="who">Z pasji do drewna<b>Zespół Deskowni</b></span>
-        </div>
-      </div>
+    <div class="row-head" data-reveal>
+      <h2>Najczęściej kupowane</h2>
+      <a class="seeall" href="kategoria-bukowe.html">Zobacz wszystkie <span class="arrow">→</span></a>
+    </div>
+    <div class="product-grid" data-reveal>
+      <article class="product">
+        <div class="p-img v3"><span class="badge">Bestseller</span></div>
+        <div class="p-body"><h3>Deska sztorcowa Szachownica</h3><p class="p-meta">end grain · 40×30 · 4,5 cm</p>
+          <div class="p-foot"><span class="price">489 zł</span><button class="add" data-add data-name="Deska sztorcowa Szachownica 40×30" data-price="489">Do koszyka</button></div></div>
+      </article>
+      <article class="product">
+        <div class="p-img v1"><span class="badge">Top</span></div>
+        <div class="p-body"><h3>Deska bukowa Klasyk</h3><p class="p-meta">lite drewno · 35×25 · rowek</p>
+          <div class="p-foot"><span class="price">189 zł</span><button class="add" data-add data-name="Deska bukowa Klasyk 35×25" data-price="189">Do koszyka</button></div></div>
+      </article>
+      <article class="product">
+        <div class="p-img v2"><span class="badge">Premium</span></div>
+        <div class="p-body"><h3>Deska dębowa Premium</h3><p class="p-meta">lite drewno · 40×28 · rowek</p>
+          <div class="p-foot"><span class="price">329 zł</span><button class="add" data-add data-name="Deska dębowa Premium 40×28" data-price="329">Do koszyka</button></div></div>
+      </article>
+      <article class="product">
+        <div class="p-img v2"><span class="badge">Unikat</span></div>
+        <div class="p-body"><h3>Monolit z żywą krawędzią</h3><p class="p-meta">live edge · 50×22</p>
+          <div class="p-foot"><span class="price">389 zł</span><button class="add" data-add data-name="Monolit z żywą krawędzią 50×22" data-price="389">Do koszyka</button></div></div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ SIATKA KATEGORII ============ -->
-<section class="section section--oak" id="kategorie">
+<!-- ============ KOLEKCJE ============ -->
+<section class="section section--oak" id="kolekcje">
   <div class="wrap">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Kolekcje</p>
-      <h2>Pięć rodzin desek. Jedna jakość.</h2>
-      <p>Od twardego buka po monumentalne deski sztorcowe — wybierz drewno, które pasuje do Twojej kuchni i sposobu gotowania.</p>
+    <div class="row-head" data-reveal>
+      <h2>Kupuj według drewna</h2>
     </div>
-    <nav class="cat-grid" aria-label="Kategorie produktów" data-reveal>
-      <a class="cat-card cc-buk" href="kategoria-bukowe.html">
-        <span class="cc-media" aria-hidden="true"></span>
-        <span class="cc-no">01</span><h3>Deski bukowe</h3>
-        <p>Twarde, jasne i odporne. Codzienny koń roboczy każdej kuchni.</p>
-        <span class="cc-link">Zobacz kolekcję <span class="arrow">→</span></span>
-      </a>
-      <a class="cat-card cc-dab" href="kategoria-debowe.html">
-        <span class="cc-media" aria-hidden="true"></span>
-        <span class="cc-no">02</span><h3>Deski dębowe</h3>
-        <p>Ciepły rysunek słojów i solidność, która imponuje na lata.</p>
-        <span class="cc-link">Zobacz kolekcję <span class="arrow">→</span></span>
-      </a>
-      <a class="cat-card cc-sztorc" href="kategoria-sztorcowe.html">
-        <span class="cc-media" aria-hidden="true"></span>
-        <span class="cc-no">03</span><h3>Deski sztorcowe</h3>
-        <p>End grain — pionowe włókna chronią ostrza i goją się same.</p>
-        <span class="cc-link">Zobacz kolekcję <span class="arrow">→</span></span>
-      </a>
-      <a class="cat-card cc-serw" href="kategoria-serwowanie.html">
-        <span class="cc-media" aria-hidden="true"></span>
-        <span class="cc-no">04</span><h3>Do serwowania</h3>
-        <p>Monolity i żywa krawędź na sery, wędliny i wielkie kolacje.</p>
-        <span class="cc-link">Zobacz kolekcję <span class="arrow">→</span></span>
-      </a>
-      <a class="cat-card cc-zestaw" href="kategoria-zestawy.html">
-        <span class="cc-media" aria-hidden="true"></span>
-        <span class="cc-no">05</span><h3>Zestawy i akcesoria</h3>
-        <p>Gotowe prezenty dla kucharza oraz olej i wosk do pielęgnacji.</p>
-        <span class="cc-link">Zobacz kolekcję <span class="arrow">→</span></span>
-      </a>
-      <a class="cat-card" href="#kontakt" style="background:var(--espresso)">
-        <span class="cc-no">⌘</span><h3>Projekt na zamówienie</h3>
-        <p>Wymiar, gatunek, grawer — zaprojektujmy deskę razem.</p>
-        <span class="cc-link">Napisz do nas <span class="arrow">→</span></span>
-      </a>
-    </nav>
-  </div>
-</section>
-
-<!-- ============ DLACZEGO MY / CECHY PREMIUM ============ -->
-<section class="section section--dark">
-  <div class="wrap">
-    <div class="section-head" data-reveal>
-      <p class="eyebrow">Dlaczego nasze deski</p>
-      <h2>Cztery rzeczy, których nie zobaczysz, a poczujesz.</h2>
-      <p>Premium nie polega na cenie. Polega na decyzjach, które podejmujemy zanim drewno trafi pod nóż.</p>
-    </div>
-    <div class="feat-grid" data-reveal>
-      <div class="feat">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
-        <h3>Klej Titebond III</h3>
-        <p>Certyfikowany do kontaktu z żywnością i wodoodporny. Sklejenia, które trzymają przez dekady, bez rozwarstwień.</p>
-      </div>
-      <div class="feat">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
-        <h3>Technologia szlifowania</h3>
-        <p>Wieloetapowy szlif do ziarnistości 400. Powierzchnia jedwabista w dotyku, łagodna dla noża i higieniczna.</p>
-      </div>
-      <div class="feat">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M4 9h16M4 14h16M9 4v16"/></svg>
-        <h3>Stabilność drewna</h3>
-        <p>Drewno suszone komorowo do 8–10% wilgotności i sezonowane. Deska, która nie pęka i się nie wykrzywia.</p>
-      </div>
-      <div class="feat">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-        <h3>Robione na lata</h3>
-        <p>Olejowanie naturalnym olejem z woskiem i serwis na życzenie. Kupujesz raz, krojesz przez pokolenia.</p>
-      </div>
+    <div class="collection-strip" data-reveal>
+      <a class="col-tile cc-buk" href="kategoria-bukowe.html"><span class="ct-media cc-media"></span><span class="ct-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Bukowe</h3></a>
+      <a class="col-tile cc-dab" href="kategoria-debowe.html"><span class="ct-media cc-media"></span><span class="ct-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Dębowe</h3></a>
+      <a class="col-tile cc-sztorc" href="kategoria-sztorcowe.html"><span class="ct-media cc-media"></span><span class="ct-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Sztorcowe</h3></a>
+      <a class="col-tile cc-serw" href="kategoria-serwowanie.html"><span class="ct-media cc-media"></span><span class="ct-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Do serwowania</h3></a>
+      <a class="col-tile cc-zestaw" href="kategoria-zestawy.html"><span class="ct-media cc-media"></span><span class="ct-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Zestawy</h3></a>
     </div>
   </div>
 </section>
 
-<!-- ============ CTA KOŃCOWE ============ -->
+<!-- ============ THE EDIT ============ -->
 <section class="section section--paper">
+  <div class="wrap">
+    <div class="edit-grid" data-reveal>
+      <a class="edit-card e1" href="kategoria-zestawy.html">
+        <span class="ec-media" aria-hidden="true"></span>
+        <small>Na prezent</small>
+        <h3>Zestawy, które robią wrażenie pod choinką</h3>
+        <span class="btn btn--light" style="align-self:flex-start">Zobacz zestawy</span>
+      </a>
+      <a class="edit-card e2" href="kategoria-sztorcowe.html">
+        <span class="ec-media" aria-hidden="true"></span>
+        <small>Dla profesjonalistów</small>
+        <h3>Deski sztorcowe end grain — łagodne dla ostrzy</h3>
+        <span class="btn btn--light" style="align-self:flex-start">Odkryj end grain</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUNDLE / KUPOWANE RAZEM ============ -->
+<section class="section section--oak">
+  <div class="wrap">
+    <div class="bundle" data-reveal>
+      <div class="bundle-visual">
+        <span class="bv bv1"></span>
+        <span class="plus">+</span>
+        <span class="bv bv2"></span>
+      </div>
+      <div class="bundle-text">
+        <p class="eyebrow">Najczęściej kupowane razem</p>
+        <h2>Deska + olej pielęgnacyjny</h2>
+        <p>Twoja deska pokocha regularne olejowanie. Dobierz naturalny olej z woskiem i przedłuż jej życie o lata.</p>
+        <div class="bundle-price">
+          <span class="now">218 zł</span>
+          <span class="was">238 zł</span>
+          <span class="save">−20 zł</span>
+        </div>
+        <button class="btn btn--primary" data-add data-name="Zestaw: deska bukowa + olej-wosk" data-price="218">Dodaj zestaw do koszyka <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPINIE ============ -->
+<section class="section section--paper">
+  <div class="wrap">
+    <div class="row-head" data-reveal>
+      <h2>4,9 / 5 — mówią klienci</h2>
+      <a class="seeall" href="#">1240 opinii <span class="arrow">→</span></a>
+    </div>
+    <div class="reviews" data-reveal>
+      <div class="review"><div class="stars">★★★★★</div><p>„Deska sztorcowa to inny świat. Noże tępią się dużo wolniej, a wygląda jak rzeźba na blacie."</p><span class="who">Marta K.</span></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Zamówiłem zestaw dębowy z grawerem na ślub. Para płakała ze szczęścia. Jakość premium."</p><span class="who">Tomasz W.</span></div>
+      <div class="review"><div class="stars">★★★★★</div><p>„Po roku używania i olejowaniu wygląda lepiej niż w dniu zakupu. Robione z głową."</p><span class="who">Aneta P.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEASER MARKI (krótko) ============ -->
+<section class="section section--dark">
   <div class="wrap cta-final" data-reveal>
-    <p class="eyebrow" style="justify-content:center">Gotowy?</p>
-    <h2>Zamów deskę, która przetrwa Twoją kuchnię.</h2>
-    <p>Darmowa wysyłka od 250 zł, grawer w prezencie i 14 dni na spokojną decyzję.</p>
-    <a class="btn btn--primary" href="#kategorie">Przeglądaj wszystkie deski <span class="arrow">→</span></a>
+    <p class="eyebrow" style="justify-content:center">Niezależna manufaktura</p>
+    <h2 style="color:var(--oak)">Robimy jedno: deski do krojenia z pasji do drewna.</h2>
+    <p style="color:rgba(244,236,221,.78)">Selekcja drewna, kleje Titebond III, ręczny szlif i olejowanie. Bez kompromisów.</p>
+    <a class="btn btn--primary" href="o-nas.html">Poznaj Deskownię <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section section--paper">
+  <div class="wrap" data-reveal>
+    <div class="newsletter">
+      <h2>−10% na pierwsze zakupy</h2>
+      <p>Zapisz się i odbierz kod rabatowy. Plus poradnik pielęgnacji desek w prezencie.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="Twój e-mail" aria-label="E-mail">
+        <button class="btn btn--primary" type="button">Odbieram rabat</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -234,7 +275,7 @@
       <span class="brand"><span class="mark"></span><b style="color:var(--oak)">Deskownia</b></span>
       <p>Niezależna manufaktura desek do krojenia z litego drewna. Robione ręcznie, z pasji do drewna.</p>
     </div>
-    <div><h4>Kategorie</h4><ul>
+    <div><h4>Sklep</h4><ul>
       <li><a href="kategoria-bukowe.html">Deski bukowe</a></li>
       <li><a href="kategoria-debowe.html">Deski dębowe</a></li>
       <li><a href="kategoria-sztorcowe.html">Deski sztorcowe</a></li>
@@ -245,7 +286,7 @@
       <li><a href="#">Pielęgnacja desek</a></li>
       <li><a href="#">Wysyłka i zwroty</a></li>
       <li><a href="#">Grawer i personalizacja</a></li>
-      <li><a href="#">Kontakt</a></li>
+      <li><a href="o-nas.html">O nas</a></li>
     </ul></div>
     <div><h4>Kontakt</h4><ul>
       <li><a href="tel:+48000000000">+48 000 000 000</a></li>
