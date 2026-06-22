@@ -470,8 +470,8 @@ h1, h2, h3 {
 .edit-card { position: relative; isolation: isolate; min-height: 360px; border-radius: var(--radius); overflow: hidden; display:flex; flex-direction:column; justify-content:flex-end; padding: clamp(1.4rem,4vw,2.4rem); color: var(--oak); box-shadow: var(--shadow); }
 .edit-card .ec-media { position:absolute; inset:0; z-index:0; }
 .edit-card .ec-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.08),rgba(20,12,8,.78)); }
-.edit-card.e1 .ec-media { background: linear-gradient(135deg,#9a6b3e,#c77d2e 90%); }
-.edit-card.e2 .ec-media { background: repeating-linear-gradient(0deg,#7a4f2c 0 20px,#6b4426 20px 40px),repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 20px,transparent 20px 40px); background-blend-mode:multiply; }
+.edit-card.e1 .ec-media {background: url('do-sushi-2.webp') center center / cover no-repeat; }
+.edit-card.e2 .ec-media {background: url('przystawki-2.webp') center center / cover no-repeat; }
 .edit-card small, .edit-card h3, .edit-card .btn { position: relative; z-index: 2; }
 .edit-card small { color: var(--oil-hot); font-weight: 700; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
 .edit-card h3 { font-size: clamp(1.5rem,3.5vw,2.2rem); margin: .4rem 0 .8rem; max-width: 18ch; }
