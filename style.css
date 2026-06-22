@@ -176,9 +176,10 @@ h1, h2, h3 {
   position: absolute; inset: 0; z-index: 0;
   /* podkład pod WIDEO (olejowanie deski). Zastąp <video>. */
   background:
-    radial-gradient(120% 90% at 70% 10%, rgba(199,125,46,.22), transparent 55%),
+    /* radial-gradient(120% 90% at 70% 10%, rgba(199,125,46,.22), transparent 55%),
     repeating-linear-gradient(96deg, #2c1c14 0 26px, #34211616 26px 52px),
-    linear-gradient(160deg, #1d120c, #3a2418 70%, #4d3424);
+    linear-gradient(160deg, #1d120c, #3a2418 70%, #4d3424); */
+     url('hero-banner.webp') no-repeat center center
 }
 .hero-media::after {
   content:""; position:absolute; inset:0;
@@ -255,7 +256,7 @@ h1, h2, h3 {
 .cat-card .cc-media { position:absolute; inset:0; z-index:-2; }
 .cat-card .cc-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,12,8,.05), rgba(20,12,8,.82)); z-index:-1; }
 /* warianty słojów dla kafelków */
-.cc-buk   .cc-media { background: repeating-linear-gradient(100deg,#c9a878 0 30px,#d8b988 30px 60px); }
+.cc-buk   .cc-media { background: url('bukowe.webp') no-repeat center center; }
 .cc-sushi .cc-media { background: repeating-linear-gradient(100deg,#5a3e2a 0 28px,#6b4a30 28px 56px); }
 .cc-przy  .cc-media { background: linear-gradient(135deg,#b98a52,#d8b988 90%); }
 .cat-card .cc-no { font-family: var(--display); font-size: .8rem; opacity:.7; letter-spacing:.1em; }
