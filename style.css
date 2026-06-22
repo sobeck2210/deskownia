@@ -257,6 +257,7 @@ h1, h2, h3 {
 .cat-card .cc-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(20,12,8,.05), rgba(20,12,8,.82)); z-index:-1; }
 /* warianty słojów dla kafelków */
 .cc-buk   .cc-media { background: url('bukowe-1.webp') no-repeat center center; }
+
 .cc-sushi .cc-media { background: url('do-sushi.webp') no-repeat center center; }
 .cc-przy  .cc-media { background: url('do-przystawek.webp') no-repeat center center; }
 .cat-card .cc-no { font-family: var(--display); font-size: .8rem; opacity:.7; letter-spacing:.1em; }
