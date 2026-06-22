@@ -63,7 +63,7 @@
 
   document.querySelectorAll("[data-add]").forEach(btn => {
     btn.addEventListener("click", () => {
-      cart.push({ name: btn.dataset.name || "Deska", price: +btn.dataset.price || 0, qty: 1 });
+      cart.push({ name: btn.dataset.name || "Deska", price: +btn.dataset.price || 0, qty: +btn.dataset.qty || 1 });
       renderCart();
       openCart();
     });
