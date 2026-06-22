@@ -352,9 +352,9 @@ h1, h2, h3 {
 }
 .product:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
 .product .p-img { aspect-ratio:1; position:relative; }
-.product .p-img.v1 { background: repeating-linear-gradient(105deg,#c9a878 0 22px,#d8b988 22px 44px); }
-.product .p-img.v2 { background: repeating-linear-gradient(95deg,#8a5c34 0 22px,#9a6b3e 22px 44px); }
-.product .p-img.v3 { background: repeating-linear-gradient(0deg,#7a4f2c 0 18px,#6b4426 18px 36px), repeating-linear-gradient(90deg,rgba(0,0,0,.14) 0 18px,transparent 18px 36px); background-blend-mode:multiply; }
+.product .p-img.v1 { background: url('sushi-xl-45-15.webp') no-repeat center center; }
+.product .p-img.v2 { background: url('bukowa-klasyk-35x25.webp') no-repeat center center; }
+.product .p-img.v3 { background: url('do-przystawek-30x20.webp') no-repeat center center; }
 .product .badge { position:absolute; top:.7rem; left:.7rem; background:var(--espresso); color:var(--oak); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; padding:.3rem .55rem; border-radius:3px; }
 .product .p-body { padding:1rem 1.1rem 1.2rem; display:flex; flex-direction:column; flex:1; }
 .product h3 { font-size:1.12rem; margin:0 0 .25rem; }
@@ -437,7 +437,7 @@ h1, h2, h3 {
     /* radial-gradient(90% 80% at 15% 90%, rgba(199,125,46,.26), transparent 55%),
     repeating-linear-gradient(98deg,#2c1c14 0 30px,#34211618 30px 60px),
     linear-gradient(160deg,#1d120c,#3a2418 70%,#4d3424); */
-     url('hero-banner.webp') no-repeat center center
+     url('hero-banner.webp') no-repeat center center;
 }
 .shop-hero .media::after { content:""; position:absolute; inset:0; background: linear-gradient(90deg, rgba(20,12,8,.72) 0%, rgba(20,12,8,.35) 48%, rgba(20,12,8,.1) 100%); }
 .shop-hero .wrap { position: relative; z-index: 2; }
