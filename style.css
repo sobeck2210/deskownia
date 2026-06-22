@@ -344,8 +344,26 @@ h1, h2, h3 {
 .filter-toggle { display:inline-flex; }
 @media (min-width:900px){ .filter-toggle{ display:none; } }
 
-.product-grid { display:grid; gap:var(--gap); grid-template-columns:repeat(2,1fr); }
-@media (min-width:680px){ .product-grid{ grid-template-columns:repeat(3,1fr); } }
+.product-grid { 
+  display: grid; 
+  gap: var(--gap); 
+  /* 1. Domyślnie: 1 kolumna na najmniejszych telefonach */
+  grid-template-columns: 1fr; 
+}
+
+/* 2. Małe tablety / duże telefony (od ok. 480px): przeskakujemy na 2 kolumny */
+@media (min-width: 480px) { 
+  .product-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  } 
+}
+
+/* 3. Większe ekrany (od 680px): wskakują 3 kolumny */
+@media (min-width: 680px) { 
+  .product-grid { 
+    grid-template-columns: repeat(3, 1fr); 
+  } 
+}
 .product {
   border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
   background:#fff; display:flex; flex-direction:column; transition: box-shadow .2s ease, transform .2s ease;
