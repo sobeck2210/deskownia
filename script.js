@@ -129,6 +129,58 @@
   searchOverlay && searchOverlay.addEventListener("click", e => { if (e.target === searchOverlay) closeSearch(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") closeSearch(); });
 
+  /* indeks produktów (na sztywno) */
+  const PRODUCTS = [
+    {n:"Deska bukowa Klasyk 35×25",p:189,u:"produkt-deska-bukowa-klasyk-35x25.html",c:"Bukowe"},
+    {n:"Deska bukowa Mini 28×20",p:129,u:"produkt-deska-bukowa-mini-28x20.html",c:"Bukowe"},
+    {n:"Deska bukowa XL 50×35",p:279,u:"produkt-deska-bukowa-xl-50x35.html",c:"Bukowe"},
+    {n:"Deska bukowa z rączką 38×24",p:209,u:"produkt-deska-bukowa-z-raczka-38x24.html",c:"Bukowe"},
+    {n:"Deska bukowa do chleba 40×28",p:229,u:"produkt-deska-bukowa-do-chleba-40x28.html",c:"Bukowe"},
+    {n:"Deska bukowa okrągła Ø35",p:199,u:"produkt-deska-bukowa-okragla-o35.html",c:"Bukowe"},
+    {n:"Deska do sushi XL 45×15",p:199,u:"produkt-deska-do-sushi-xl-45x15.html",c:"Do sushi"},
+    {n:"Deska do sushi prosta 30×12",p:149,u:"produkt-deska-do-sushi-prosta-30x12.html",c:"Do sushi"},
+    {n:"Deska do sushi z rowkiem na sos",p:169,u:"produkt-deska-do-sushi-z-rowkiem-na-sos.html",c:"Do sushi"},
+    {n:"Deska do sushi dwustronna 35×14",p:219,u:"produkt-deska-do-sushi-dwustronna-35x14.html",c:"Do sushi"},
+    {n:"Deska do sushi wędzona 40×14",p:239,u:"produkt-deska-do-sushi-wedzona-40x14.html",c:"Do sushi"},
+    {n:"Zestaw 2 desek do sushi",p:269,u:"produkt-zestaw-2-desek-do-sushi.html",c:"Do sushi"},
+    {n:"Deska do przystawek z miseczką 30×20",p:159,u:"produkt-deska-do-przystawek-z-miseczka-30x20.html",c:"Do przystawek"},
+    {n:"Deska do przystawek 25×18",p:119,u:"produkt-deska-do-przystawek-25x18.html",c:"Do przystawek"},
+    {n:"Deska tapas wąska 50×16",p:179,u:"produkt-deska-tapas-waska-50x16.html",c:"Do przystawek"},
+    {n:"Deska do przystawek okrągła Ø28",p:139,u:"produkt-deska-do-przystawek-okragla-o28.html",c:"Do przystawek"},
+    {n:"Deska do przystawek z uchwytem 35×22",p:169,u:"produkt-deska-do-przystawek-z-uchwytem-35x22.html",c:"Do przystawek"},
+    {n:"Zestaw mini-desek 3 szt",p:199,u:"produkt-zestaw-mini-desek-3-szt.html",c:"Do przystawek"}
+  ];
+  const norm = (s) => s.toLowerCase()
+    .replace(/[ąàä]/g,"a").replace(/ć/g,"c").replace(/[ęè]/g,"e").replace(/ł/g,"l")
+    .replace(/ń/g,"n").replace(/[óò]/g,"o").replace(/ś/g,"s").replace(/[źż]/g,"z")
+    .replace(/×/g,"x").replace(/\s+/g," ").trim();
+
+  if (searchOverlay) {
+    const input = searchOverlay.querySelector("input");
+    const sug = searchOverlay.querySelector(".search-sug");
+    const panel = searchOverlay.querySelector(".search-panel");
+    const results = document.createElement("div");
+    results.className = "search-results";
+    panel.appendChild(results);
+
+    const render = (q) => {
+      const nq = norm(q);
+      if (!nq) { results.innerHTML = ""; results.classList.remove("show"); if (sug) sug.style.display = ""; return; }
+      if (sug) sug.style.display = "none";
+      results.classList.add("show");
+      const terms = nq.split(" ").filter(Boolean);
+      const hits = PRODUCTS.filter(p => { const hay = norm(p.n + " " + p.c); return terms.every(t => hay.includes(t)); }).slice(0, 8);
+      if (!hits.length) { results.innerHTML = '<p class="sr-empty">Brak wyników dla \u201E' + q + '\u201D.</p>'; return; }
+      results.innerHTML = hits.map(p =>
+        '<a class="sr-item" href="' + p.u + '"><span class="sr-name">' + p.n + '</span><span class="sr-cat">' + p.c + '</span><span class="sr-price">' + p.p + ' zł</span></a>'
+      ).join("");
+    };
+    input.addEventListener("input", () => render(input.value));
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter") { const first = results.querySelector(".sr-item"); if (first) window.location.href = first.getAttribute("href"); }
+    });
+  }
+
   /* ---- Reveal przy scrollu ---- */
   const items = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && items.length) {

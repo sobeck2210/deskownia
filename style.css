@@ -525,6 +525,16 @@ h1, h2, h3 {
 .search-sug a { font-size:.85rem; border:1px solid var(--line); border-radius:20px; padding:.4rem .9rem; color: var(--clay); }
 .search-sug a:hover { border-color: var(--oil); color: var(--oil); }
 
+/* wyniki wyszukiwania */
+.search-results { max-width: var(--max); margin: 1rem auto 0; display: none; flex-direction: column; }
+.search-results.show { display: flex; }
+.search-results .sr-item { display:flex; align-items:center; gap:.8rem; padding:.8rem .2rem; border-bottom:1px solid var(--line); }
+.search-results .sr-item:hover { color: var(--oil); }
+.search-results .sr-name { flex:1; font-family:var(--display); font-size:1.05rem; }
+.search-results .sr-cat { font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--clay); }
+.search-results .sr-price { font-family:var(--display); font-size:1rem; min-width:5ch; text-align:right; }
+.search-results .sr-empty { color:var(--clay); padding:1rem .2rem; margin:0; }
+
 /* =====================================================================
    STRONA PRODUKTU (PDP)
    ===================================================================== */
