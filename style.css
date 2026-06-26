@@ -392,6 +392,12 @@ h1, h2, h3 {
 .cart-item { display:grid; grid-template-columns:64px 1fr auto; gap:.9rem; align-items:center; }
 .cart-item .ci-img { width:64px; height:64px; border-radius:3px; background:repeating-linear-gradient(100deg,#9a6b3e 0 12px,#8a5c34 12px 24px); }
 .cart-item .ci-name { font-weight:600; font-size:.92rem; }
+.cart-item .ci-qty { display:flex; align-items:center; gap:.5rem; margin-top:.35rem; }
+.cart-item .ci-qty button { background:none; border:1px solid var(--line); border-radius:3px; width:24px; height:24px; cursor:pointer; color:var(--ink); font-size:1rem; line-height:1; display:grid; place-items:center; }
+.cart-item .ci-qty button:hover { border-color:var(--oil); color:var(--oil); }
+.cart-item .ci-qty span { font-size:.85rem; min-width:1.2ch; text-align:center; }
+.cart-item .ci-qty .ci-remove { width:auto; border:none; margin-left:.4rem; color:var(--clay); font-size:.74rem; text-decoration:underline; padding:0 .2rem; }
+.cart-item .ci-qty .ci-remove:hover { color:var(--clay); }
 .cart-item .ci-price { font-family:var(--display); }
 .cart-empty { text-align:center; color:var(--clay); margin:auto; padding:2rem; }
 .cart-foot { padding:1.3rem; border-top:1px solid var(--line); }
@@ -470,8 +476,8 @@ h1, h2, h3 {
 .edit-card { position: relative; isolation: isolate; min-height: 360px; border-radius: var(--radius); overflow: hidden; display:flex; flex-direction:column; justify-content:flex-end; padding: clamp(1.4rem,4vw,2.4rem); color: var(--oak); box-shadow: var(--shadow); }
 .edit-card .ec-media { position:absolute; inset:0; z-index:0; }
 .edit-card .ec-media::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg,rgba(20,12,8,.08),rgba(20,12,8,.78)); }
-.edit-card.e1 .ec-media {background: url('do-sushi-2.webp') center center / cover no-repeat; }
-.edit-card.e2 .ec-media {background: url('przystawki-2.webp') center center / cover no-repeat; }
+.edit-card.e1 .ec-media { background: linear-gradient(135deg,#9a6b3e,#c77d2e 90%); }
+.edit-card.e2 .ec-media { background: repeating-linear-gradient(0deg,#7a4f2c 0 20px,#6b4426 20px 40px),repeating-linear-gradient(90deg,rgba(0,0,0,.16) 0 20px,transparent 20px 40px); background-blend-mode:multiply; }
 .edit-card small, .edit-card h3, .edit-card .btn { position: relative; z-index: 2; }
 .edit-card small { color: var(--oil-hot); font-weight: 700; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; }
 .edit-card h3 { font-size: clamp(1.5rem,3.5vw,2.2rem); margin: .4rem 0 .8rem; max-width: 18ch; }

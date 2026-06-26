@@ -14,9 +14,25 @@
   menuClose && menuClose.addEventListener("click", closeMenu);
   menu && menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
 
-  /* ---- Koszyk (demo, stan w pamięci) ---- */
+  /* ---- Koszyk (trwały, localStorage) ---- */
   const FREE_SHIP = 250; // próg darmowej wysyłki [zł]
-  let cart = [];
+  const CART_KEY = "deskownia_cart";
+
+  function loadCart() {
+    try {
+      const raw = localStorage.getItem(CART_KEY);
+      const data = raw ? JSON.parse(raw) : [];
+      if (!Array.isArray(data)) return [];
+      return data
+        .map(i => ({ name: String(i.name || "Deska"), price: +i.price || 0, qty: Math.max(1, +i.qty || 1) }))
+        .filter(i => i.price >= 0);
+    } catch (e) { return []; }
+  }
+  function saveCart() {
+    try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {}
+  }
+
+  let cart = loadCart();
 
   const drawer = document.querySelector("[data-cart-drawer]");
   const overlay = document.querySelector("[data-overlay]");
@@ -31,6 +47,7 @@
   function closeCart() { drawer && drawer.classList.remove("open"); overlay && overlay.classList.remove("open"); document.body.style.overflow = ""; }
 
   function renderCart() {
+    saveCart();
     if (!cartItemsEl) return;
     const count = cart.reduce((s, i) => s + i.qty, 0);
     const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
@@ -52,18 +69,36 @@
         <div class="ci-img"></div>
         <div>
           <div class="ci-name">${i.name}</div>
-          <button data-remove="${idx}" style="background:none;border:none;color:var(--clay);font-size:.78rem;cursor:pointer;padding:.2rem 0;text-decoration:underline">Usuń</button>
+          <div class="ci-qty">
+            <button data-dec="${idx}" aria-label="Mniej">−</button>
+            <span>${i.qty}</span>
+            <button data-inc="${idx}" aria-label="Więcej">+</button>
+            <button data-remove="${idx}" class="ci-remove">Usuń</button>
+          </div>
         </div>
         <div class="ci-price">${fmt(i.price * i.qty)}</div>
       </div>`).join("");
 
     cartItemsEl.querySelectorAll("[data-remove]").forEach(b =>
       b.addEventListener("click", () => { cart.splice(+b.dataset.remove, 1); renderCart(); }));
+    cartItemsEl.querySelectorAll("[data-inc]").forEach(b =>
+      b.addEventListener("click", () => { cart[+b.dataset.inc].qty++; renderCart(); }));
+    cartItemsEl.querySelectorAll("[data-dec]").forEach(b =>
+      b.addEventListener("click", () => {
+        const idx = +b.dataset.dec;
+        if (cart[idx].qty > 1) cart[idx].qty--; else cart.splice(idx, 1);
+        renderCart();
+      }));
   }
 
   document.querySelectorAll("[data-add]").forEach(btn => {
     btn.addEventListener("click", () => {
-      cart.push({ name: btn.dataset.name || "Deska", price: +btn.dataset.price || 0, qty: +btn.dataset.qty || 1 });
+      const name = btn.dataset.name || "Deska";
+      const price = +btn.dataset.price || 0;
+      const qty = +btn.dataset.qty || 1;
+      const existing = cart.find(i => i.name === name && i.price === price);
+      if (existing) existing.qty += qty;
+      else cart.push({ name, price, qty });
       renderCart();
       openCart();
     });
